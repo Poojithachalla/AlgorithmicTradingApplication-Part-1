@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Order Details</title>
+</head>
+<body>
+
+	<h1>Order Details</h1>
+
+	<form action="#" th:action="@{/orders/save}" th:each="order: ${order}"
+		method="post">
+		<label>order_id:</label> <input type="text" name="order_id"
+			th:value="${order.order_id}" readonly /><br /> <br /> <label>Company_Id:</label>
+		<input type="text" name="company_Id" th:value="${order.company_Id}"
+			readonly /><br /> <br /> <label> Side:</label> <input type="text"
+			name="side" th:value="${order.side}" readonly /><br /> <br /> <label>Quantity:</label>
+		<input type="number" name="quantity" th:value="${order.quantity}" /><br />
+		<br /> <label>Price:</label> <input type="number" name="price"
+			th:value="${order.price}" /><br /> <br /> <label>Order_Status:</label>
+		<input type="text" name="order_status"
+			th:value="${order.order_status}" readonly /><br /> <br /> <input
+			type="hidden" name="action" id="action" value="" />
+		<button type="submit"
+			onclick="document.getElementById('action').value='modify'">Modify</button>
+
+		<button type="submit"
+			onclick="document.getElementById('action').value='delete'">Delete</button>
+
+	</form>
+
+
+
+</body>
+
+</html>

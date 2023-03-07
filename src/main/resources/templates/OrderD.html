@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--   <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> -->
+	
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+        <title>Home page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+ <body>
+        <p>
+       <span>List of Orders</span>
+
+        </p>
+      
+      	 <table>
+            <tr>
+              <th>order_id</th>
+              <th>company_Id</th>
+              <th>side</th>
+               <th>quantity</th>
+              <th>price</th>
+              <th>order_status</th>
+           
+            </tr>
+            <tr th:each="order : ${orders}">
+              <td> 
+             <a th:href="@{/Orders/{order_id}(order_id=${order.order_id})}"  th:text="${order.order_id}"></a>
+              </td>
+              <td th:text="${order.company_Id}"></td>
+              <td th:text="${order.side}"></td>
+              <td th:text="${order.quantity}"></td>
+              <td th:text="${order.price}"></td>
+              <td th:text="${order.order_status}"></td>
+            </tr>
+          </table>
+      
+    </body>
+</html>

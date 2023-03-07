@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+<body>
+    <form action="/create_Order" method="post">
+        <label>Company_Id:</label>
+        <input type="text" name="company_Id" /><br/><br/>
+        <label>Select Side:</label>
+        <input type="radio" name="side" value="Buy" th:checked="${true}" />Buy
+        <input type="radio" name="side" value="Sale" />sale<br/><br/>
+        <label>Quantity:</label>
+        <input type="number" name="quantity" /><br/><br/>
+        <label>Price:</label>
+        <input type="number" name="price" /><br/><br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
